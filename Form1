@@ -1,0 +1,268 @@
+Public Class Form1
+
+    Dim i As Integer = 0
+
+    Private Sub win()
+
+        '/////O wins/////
+
+        'HORIZONTAL
+        If Button1.Text = "O" And Button2.Text = "O" And Button3.Text = "O" Then
+            Label3.Text += 1
+            MsgBox("Congratulation O won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button4.Text = "O" And Button5.Text = "O" And Button6.Text = "O" Then
+            Label3.Text += 1
+            MsgBox("Congratulation O won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button7.Text = "O" And Button8.Text = "O" And Button9.Text = "O" Then
+            Label3.Text += 1
+            MsgBox("Congratulation O won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+
+            'VERTICAL
+        ElseIf Button1.Text = "O" And Button4.Text = "O" And Button7.Text = "O" Then
+            Label3.Text += 1
+            MsgBox("Congratulation O won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button2.Text = "O" And Button5.Text = "O" And Button8.Text = "O" Then
+            Label3.Text += 1
+            MsgBox("Congratulation O won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button3.Text = "O" And Button6.Text = "O" And Button9.Text = "O" Then
+            Label3.Text += 1
+            MsgBox("Congratulation O won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+
+            'DIAGONAL
+        ElseIf Button1.Text = "O" And Button5.Text = "O" And Button9.Text = "O" Then
+            Label3.Text += 1
+            MsgBox("Congratulation O won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button3.Text = "O" And Button5.Text = "O" And Button7.Text = "O" Then
+            Label3.Text += 1
+            MsgBox("Congratulation O won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+
+
+            '/////X wins/////
+
+            'HORIZONTAL
+        ElseIf Button1.Text = "X" And Button2.Text = "X" And Button3.Text = "X" Then
+            Label4.Text += 1
+            MsgBox("Congratulation X won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button4.Text = "X" And Button5.Text = "X" And Button6.Text = "X" Then
+            Label4.Text += 1
+            MsgBox("Congratulation X won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button7.Text = "X" And Button8.Text = "X" And Button9.Text = "X" Then
+            Label4.Text += 1
+            MsgBox("Congratulation X won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+
+            'VERTICAL
+        ElseIf Button1.Text = "X" And Button4.Text = "X" And Button7.Text = "X" Then
+            Label4.Text += 1
+            MsgBox("Congratulation X won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button2.Text = "X" And Button5.Text = "X" And Button8.Text = "X" Then
+            Label4.Text += 1
+            MsgBox("Congratulation X won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button3.Text = "X" And Button6.Text = "X" And Button9.Text = "X" Then
+            Label4.Text += 1
+            MsgBox("Congratulation X won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+
+            'DIAGONAL
+        ElseIf Button1.Text = "X" And Button5.Text = "X" And Button9.Text = "X" Then
+            Label4.Text += 1
+            MsgBox("Congratulation X won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        ElseIf Button3.Text = "X" And Button5.Text = "X" And Button7.Text = "X" Then
+            Label4.Text += 1
+            MsgBox("Congratulation X won!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+
+            'EMPATE
+        ElseIf Button1.Enabled = False And Button2.Enabled = False And Button3.Enabled = False And Button4.Enabled = False And Button5.Enabled = False And Button6.Enabled = False And Button7.Enabled = False And Button8.Enabled = False And Button9.Enabled = False Then
+            Label6.Text += 1
+            MsgBox("Wow is a Tie!", MsgBoxStyle.Information, "Tic Tac Toe")
+            Call clear()
+        End If
+
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If i = 0 Then
+            Button1.Text = "O"
+            Button1.Enabled = False
+            i = i + 1
+        Else
+            Button1.Text = "X"
+            Button1.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If i = 0 Then
+            Button2.Text = "O"
+            Button2.Enabled = False
+            i = i + 1
+        Else
+            Button2.Text = "X"
+            Button2.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If i = 0 Then
+            Button3.Text = "O"
+            Button3.Enabled = False
+            i = i + 1
+        Else
+            Button3.Text = "X"
+            Button3.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If i = 0 Then
+            Button4.Text = "O"
+            Button4.Enabled = False
+            i = i + 1
+        Else
+            Button4.Text = "X"
+            Button4.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If i = 0 Then
+            Button5.Text = "O"
+            Button5.Enabled = False
+            i = i + 1
+        Else
+            Button5.Text = "X"
+            Button5.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        If i = 0 Then
+            Button6.Text = "O"
+            Button6.Enabled = False
+            i = i + 1
+        Else
+            Button6.Text = "X"
+            Button6.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        If i = 0 Then
+            Button7.Text = "O"
+            Button7.Enabled = False
+            i = i + 1
+        Else
+            Button7.Text = "X"
+            Button7.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        If i = 0 Then
+            Button8.Text = "O"
+            Button8.Enabled = False
+            i = i + 1
+        Else
+            Button8.Text = "X"
+            Button8.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        If i = 0 Then
+            Button9.Text = "O"
+            Button9.Enabled = False
+            i = i + 1
+        Else
+            Button9.Text = "X"
+            Button9.Enabled = False
+            i = i - 1
+        End If
+        Call win()
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Call clear()
+    End Sub
+
+    Private Sub clear()
+        Button1.Text = ""
+        Button1.Enabled = True
+
+        Button2.Text = ""
+        Button2.Enabled = True
+
+        Button3.Text = ""
+        Button3.Enabled = True
+
+        Button4.Text = ""
+        Button4.Enabled = True
+
+        Button5.Text = ""
+        Button5.Enabled = True
+
+        Button6.Text = ""
+        Button6.Enabled = True
+
+        Button7.Text = ""
+        Button7.Enabled = True
+
+        Button8.Text = ""
+        Button8.Enabled = True
+
+        Button9.Text = ""
+        Button9.Enabled = True
+    End Sub
+
+    Private Sub NewGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewGameToolStripMenuItem.Click
+        Call clear()
+    End Sub
+
+    Private Sub ResetPointsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetPointsToolStripMenuItem.Click
+        Label3.Text = 0
+        Label4.Text = 0
+        Label6.Text = 0
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        MsgBox("Creado por Ricardo Cuan 2015 :D", MsgBoxStyle.Information, "Tic Tac Toe")
+    End Sub
+
+End Class
