@@ -1,0 +1,20 @@
+Public Class Form2
+
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+
+    Private Sub comenzar_Click(sender As Object, e As EventArgs) Handles button1.Click
+
+        Form1.setPlayerNames(player1.Text, player2.Text)
+        Me.Close()
+    End Sub
+
+    Private Sub player2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles player2.KeyPress
+
+        If (e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return)) Then
+            button1.PerformClick()
+        End If
+    End Sub
+End Class
