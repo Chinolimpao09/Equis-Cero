@@ -1,0 +1,16 @@
+Public Class Form4
+
+  Public Sub Bloquear()
+    
+    Dim mark As String
+    Dim pcMark As String
+    
+    If mark Then
+    
+    'Horizontal
+      If button1.Text = "O" and button2.Text = "O" and button3.Text = "" Then
+        button3.Text = 
+  
+  End Sub
+
+End Class
