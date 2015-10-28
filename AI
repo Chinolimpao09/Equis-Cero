@@ -1,17 +1,198 @@
 Public Class Form4
 
+  Dim markP As Boolean 'True = X and False = O
+  Dim markC As Boolean 'True = X and False = O
+  Dim mark As Boolean  'True = markP and False = markC
+  Dim turn As Boolean  'True = Player and False = PC
+
+  'TODO mark function method
+
   Public Sub Bloquear()
     
-    Dim mark As String
-    Dim markBool As Boolean
-    Dim pcMark As String
+    If turn = False then
     
-    If mark Then
+     If mark Then
     
     'Horizontal
-      If button1.Text = "mark" and button2.Text = "mark" and button3.Text = "" Then
-        button3.Text = 
-  
+      If button1.Text = markP and button2.Text = markP and button3.Text = "" Then
+        button3.Text = markC
+        Else If button1.Text = markP and button2.Text = "" and button3.Text = markP Then
+          button2.Text = markC
+        Else If button1.Text = "" and button2.Text = markP and button3.Text = markP Then
+          button1.Text = markC
+        
+        Else If button4.Text = markP and button5.Text = markP and button6.Text = "" Then
+          button6.Text = markC
+        Else If button4.Text = markP and button5.Text = "" and button6.Text = markP Then
+          button5.Text = markC
+        Else If button4.Text = "" and button5.Text = markP and button6.Text = markP Then
+          button4.Text = markC
+        
+        Else If button7.Text = markP and button8.Text = markP and button9.Text = "" Then
+          button7.Text = markC
+        Else If button7.Text = markP and button8.Text = "" and button9.Text = markP Then
+          button8.Text = markC
+        Else If button7.Text = "" and button8.Text = markP and button9.Text = markP Then
+          button9.Text = markC
+        
+        
+        'Vertical
+        Else If button1.Text = markP and button4.Text = markP and button7.Text = "" Then
+          button7.Text = markC
+        Else If button1.Text = markP and button4.Text = "" and button7.Text = markP Then
+          button4.Text = markC
+        Else If button1.Text = "" and button4.Text = markP and button7.Text = markP Then
+          button1.Text = markC
+        
+        Else If button2.Text = markP and button5.Text = markP and button8.Text = "" Then
+          button8.Text = markC
+        Else If button2.Text = markP and button5.Text = "" and button8.Text = markP Then
+          button5.Text = markC
+        Else If button2.Text = "" and button5.Text = markP and button8.Text = markP Then
+          button2.Text = markC
+        
+        Else If button3.Text = markP and button6.Text = markP and button9.Text = "" Then
+          button9.Text = markC
+        Else If button3.Text = markP and button6.Text = "" and button9.Text = markP Then
+          button6.Text = markC
+        Else If button3.Text = "" and button6.Text = markP and button9.Text = markP Then
+          button3.Text = markC
+        
+        
+        'Horizontal
+        Else If button1.Text = markP and button5.Text = markP and button9.Text = "" Then
+          button9.Text = markC
+        Else If button1.Text = markP and button5.Text = "" and button9.Text = markP Then
+          button5.Text = markC
+        Else If button1.Text = "" and button5.Text = markP and button9.Text = markP Then
+          button1.Text = markC
+          
+        Else If button7.Text = markP and button5.Text = markP and button3.Text "" Then
+          button3.Text = markC
+        Else If button7.Text = markP and button5.Text = "" and button3.Text markP Then
+          button5.Text = markC
+        Else If button7.Text = "" and button5.Text = markP and button3.Text markP Then
+          button7.Text = markC
+          
+        End If
+      End If
+    End IF
+    
   End Sub
+  
+  Public Sub Ganador()
+    
+    mark = 
+    
+    '////PLAYER WINS////
+    'HORIZONTAL
+    If Button1.Text = mark And Button2.Text = mark And Button3.Text = mark Then
+        Call Win()
+      ElseIf Button4.Text = mark And Button5.Text = mark And Button6.Text = mark Then
+        Call Win()
+      ElseIf Button7.Text = mark And Button8.Text = mark  And Button9.Text = mark Then
+        Call Win()
+        
+      'VERTICAL
+      ElseIf Button1.Text = mark And Button4.Text = mark And Button7.Text = mark Then
+        Call Win()
+      ElseIf Button2.Text = mark And Button5.Text = mark And Button8.Text =  Then
+        Call Win()
+      ElseIf Button3.Text = mark And Button6.Text = mark And Button9.Text = mark Then
+        Call Win() 
+        
+     'DIAGONAL
+      ElseIf Button1.Text = mark And Button5.Text = mark And Button9.Text = mark Then
+        Call Win()
+      ElseIf Button3.Text = mark And Button5.Text = mark And Button7.Text = mark Then
+        Call Win()
+        
+      'EMPATE
+      ElseIf Button1.Enabled = False And Button2.Enabled = False And Button3.Enabled = False And Button4.Enabled = False And Button5.Enabled = False And Button6.Enabled = False And Button7.Enabled = False And Button8.Enabled = False And Button9.Enabled = False Then
+        Call empate()
+        
+    End If
+    
+  End Sub
+  
+  Public Sub Win()
+    
+    If mark Then 
+      
+      IF mark = turn Then
+        call PlayerWin()
+        
+          Else If mark <> turn Then
+          call ComputerWin()
+          
+       End If
+       
+      Else If mark = False
+        
+       If mark = turn Then
+        call PlayerWin()
+        
+          Else If mark <> turn Then
+          call ComputerWin()
+          
+       End If
+       
+        
+    End If
+    
+  End Sub
+  
+  
+    Private Sub PlayerWin()
+        Label4.Text += 1
+        MsgBox("Felicitaciones " & player1 & "! As ganado!  :DDDD!!!!!", MsgBoxStyle.Information, "GG!!! :D")
+        Call clear()
+        turn = True
+    End Sub
+  
+    Private Sub ComputerWin()
+        Label3.Text += 1
+        MsgBox("Sorry as perdido :(", MsgBoxStyle.Information, "GG")
+        Call clear()
+        turn = True
+    End Sub
+
+    Private Sub empate()
+        Label6.Text += 1
+        MsgBox("Wow es un Empate!", MsgBoxStyle.Information, "lol")
+        Call clear()
+        turn = True
+    End Sub
+
+    Private Sub clear()
+        Button1.Text = ""
+        Button1.Enabled = True
+
+        Button2.Text = ""
+        Button2.Enabled = True
+
+        Button3.Text = ""
+        Button3.Enabled = True
+
+        Button4.Text = ""
+        Button4.Enabled = True
+
+        Button5.Text = ""
+        Button5.Enabled = True
+
+        Button6.Text = ""
+        Button6.Enabled = True
+
+        Button7.Text = ""
+        Button7.Enabled = True
+
+        Button8.Text = ""
+        Button8.Enabled = True
+
+        Button9.Text = ""
+        Button9.Enabled = True
+
+        turn = True
+    End Sub
 
 End Class
