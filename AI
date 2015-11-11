@@ -4,17 +4,43 @@ Public Class Form4
   Dim markC As Boolean 'True = X and False = O
   Dim mark As Boolean  'True = markP and False = markC
   Dim turn As Boolean  'True = Player and False = PC
+  Dim table[] As Integer 'Boton en el tablero
+  Dim move[] As Integer  'Movimiento de Ia
+
+  Dim button1[] As  Integer = table(1,1)
+  Dim button2[] As  Integer = table(1,2)
+  Dim button3[] As  Integer = table(1,3)
+  Dim button4[] As  Integer = table(2,1)
+  Dim button5[] As  Integer = table(2,2)
+  Dim button6[] As  Integer = table(2,3)
+  Dim button7[] As  Integer = table(3,1)
+  Dim button8[] As  Integer = table(3,2)
+  Dim button9[] As  Integer = table(3,3)
 
   'TODO mark function method
 
-  Public Sub Bloquear()
+  Public Function Ia()
+    
+    If 
+    
+    
+    
+    End If
+    Return move
+    
+  End Function
+
+
+  Public Function Bloquear()
     
     If turn = False then
     
      If mark Then
     
+    
+    
     'Horizontal
-      If button1.Text = markP and button2.Text = markP and button3.Text = "" Then
+      If button1  = markP and button2.Text = markP and button3.Text = "" Then
         button3.Text = markC
         Else If button1.Text = markP and button2.Text = "" and button3.Text = markP Then
           button2.Text = markC
@@ -78,11 +104,12 @@ Public Class Form4
       End If
     End IF
     
+    Return markC
+    
   End Sub
   
   Public Sub Ganador()
     
-    mark = 
     
     '////PLAYER WINS////
     'HORIZONTAL
