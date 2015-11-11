@@ -2,11 +2,13 @@ Public Class Form4
 
   Dim markP As Boolean 'True = X and False = O
   Dim markC As Boolean 'True = X and False = O
-  Dim mark As Boolean  'True = markP and False = markC
+  Dim marPvsC As Boolean  'True = Player and False = Computer
+  
   Dim turn As Boolean  'True = Player and False = PC
-  Dim table[] As Integer 'Boton en el tablero
   Dim move[] As Integer  'Movimiento de Ia
+  Dim difficulty As Integer 'Nivel de Ia
 
+  Dim table[] As Integer 'Boton en el tablero
   Dim button1[] As  Integer = table(1,1)
   Dim button2[] As  Integer = table(1,2)
   Dim button3[] As  Integer = table(1,3)
@@ -21,7 +23,7 @@ Public Class Form4
 
   Public Function Ia()
     
-    If 
+    If  
     
     
     
@@ -139,24 +141,20 @@ Public Class Form4
         Call empate()
         
     End If
-    
   End Sub
   
   Public Sub Win()
     
-    If mark Then 
+    If markPvsC Then 
       
-      IF mark = turn Then
+      IF markP = turn Then
         call PlayerWin()
         
-          Else If mark <> turn Then
-          call ComputerWin()
-          
-       End If
+      End If
        
-      Else If mark = False
+    Else If markPvsC = False
         
-       If mark = turn Then
+     If markP = turn Then
         call PlayerWin()
         
           Else If mark <> turn Then
@@ -171,10 +169,12 @@ Public Class Form4
   
   
     Private Sub PlayerWin()
-        Label4.Text += 1
-        MsgBox("Felicitaciones " & player1 & "! As ganado!  :DDDD!!!!!", MsgBoxStyle.Information, "GG!!! :D")
-        Call clear()
-        turn = True
+    
+    If 
+     Label4.Text += 1
+    MsgBox("Felicitaciones " & player1 & "! As ganado!  :DDDD!!!!!", MsgBoxStyle.Information, "GG!!! :D")
+    Call clear()
+    turn = True
     End Sub
   
     Private Sub ComputerWin()
